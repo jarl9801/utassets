@@ -1,0 +1,335 @@
+/* src/pages/Dashboard.css */
+.dashboard-page {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .dashboard-title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dashboard-title .panda-logo {
+    font-size: 2.5rem;
+    margin-right: 10px;
+  }
+  
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  /* Responsive grid */
+  @media (max-width: 1200px) {
+    .dashboard-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Tarjetas resumen */
+  .summary-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    color: white;
+  }
+  
+  .summary-icon {
+    margin-right: 15px;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .summary-content h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .summary-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 5px 0 0;
+  }
+  
+  .total-items {
+    background-color: #4caf50;
+  }
+  
+  .total-categories {
+    background-color: #2196f3;
+  }
+  
+  .maintenance-needed {
+    background-color: #ff9800;
+  }
+  
+  .info-card {
+    background-color: #9c27b0;
+  }
+  
+  .alert-message {
+    display: flex;
+    align-items: center;
+    margin: 5px 0 0;
+    font-weight: 500;
+  }
+  
+  .alert-message svg {
+    margin-right: 5px;
+    color: #ffeb3b;
+  }
+  
+  .normal-message {
+    margin: 5px 0 0;
+    font-weight: 500;
+  }
+  
+  /* Tarjetas dashboard */
+  .dashboard-card {
+    grid-column: span 2;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-card {
+      grid-column: span 1;
+    }
+  }
+  
+  .dashboard-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .dashboard-card .card-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+  }
+  
+  .dashboard-card .card-header h3 svg {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+  }
+  
+  .dashboard-card .card-content {
+    padding: 20px;
+  }
+  
+  .view-all-link {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  /* Distribución por categoría */
+  .distribution-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .bar-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .bar-label {
+    width: 30%;
+    font-weight: 500;
+    padding-right: 15px;
+  }
+  
+  .bar-container {
+    width: 70%;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    height: 25px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+  }
+  
+  .bar-value {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Estado de equipos */
+  .condition-chart {
+    height: 30px;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+  
+  .condition-segment {
+    height: 100%;
+    transition: width 0.5s ease;
+  }
+  
+  .condition-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+  
+  .legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+  
+  .legend-label {
+    font-size: 0.9rem;
+    margin-right: 5px;
+  }
+  
+  .legend-value {
+    font-weight: 600;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+  }
+  
+  /* Top ubicaciones */
+  .locations-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .location-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  .location-item:last-child {
+    border-bottom: none;
+  }
+  
+  .location-name {
+    font-weight: 500;
+  }
+  
+  .location-count {
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 0.9rem;
+  }
+  
+  /* Items recientes */
+  .recent-items-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .recent-items-table th {
+    text-align: left;
+    padding: 10px;
+    background-color: #f1f1f1;
+    font-weight: 600;
+  }
+  
+  .recent-items-table td {
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  /* Acciones rápidas */
+  .quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  @media (max-width: 576px) {
+    .quick-actions-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .quick-action-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .quick-action-button svg {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  .quick-action-button span {
+    font-weight: 500;
+    color: var(--dark-color);
+  }
+  
+  .quick-action-button:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+  }
+  
+  .quick-action-button:hover svg,
+  .quick-action-button:hover span {
+    color: white;
+  }

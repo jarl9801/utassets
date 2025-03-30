@@ -1,0 +1,82 @@
+/* src/pages/InventoryForm.css */
+.inventory-form-page {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .inventory-form .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .inventory-form .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .form-group.full-width {
+    grid-column: span 2;
+  }
+  
+  @media (max-width: 768px) {
+    .form-group.full-width {
+      grid-column: span 1;
+    }
+  }
+  
+  .form-control.error {
+    border-color: var(--danger-color);
+  }
+  
+  .error-message {
+    color: var(--danger-color);
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+  
+  .form-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .image-upload-group {
+    grid-column: span 2;
+  }
+  
+  @media (max-width: 768px) {
+    .image-upload-group {
+      grid-column: span 1;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+    }
+  }
+  
+  .image-preview-container {
+    margin-top: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+  }
+  
+  .btn-sm {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .btn svg {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+  }

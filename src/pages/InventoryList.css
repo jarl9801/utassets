@@ -1,0 +1,203 @@
+/* src/pages/InventoryList.css */
+.inventory-list-page {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .search-box {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+  }
+  
+  .search-box svg {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .filter-select {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: white;
+  }
+  
+  .no-items {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    font-style: italic;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .btn-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-action:hover {
+    transform: scale(1.1);
+  }
+  
+  .btn-action.edit {
+    color: var(--secondary-color);
+  }
+  
+  .btn-action.delete {
+    color: var(--danger-color);
+  }
+  
+  .btn-action.maintain {
+    color: var(--warning-color);
+  }
+  
+  .sortable {
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .sort-icon {
+    vertical-align: middle;
+    margin-left: 5px;
+    transition: transform 0.2s ease;
+  }
+  
+  .sort-icon.desc {
+    transform: rotate(180deg);
+  }
+  
+  .item-name {
+    font-weight: 500;
+  }
+  
+  @media (max-width: 992px) {
+    .search-box {
+      min-width: 100%;
+    }
+    
+    .filter-options {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .card-header .btn {
+      margin-top: 10px;
+      width: 100%;
+    }
+  
+    .filter-options {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .filter-group, .filter-select {
+      width: 100%;
+    }
+    
+    .filter-options .btn {
+      width: 100%;
+    }
+  }
+  
+  /* Responsive table */
+  @media (max-width: 992px) {
+    .inventory-list-page table, 
+    .inventory-list-page thead, 
+    .inventory-list-page tbody, 
+    .inventory-list-page th, 
+    .inventory-list-page td, 
+    .inventory-list-page tr {
+      display: block;
+    }
+    
+    .inventory-list-page thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    
+    .inventory-list-page tr {
+      border: 1px solid var(--border-color);
+      margin-bottom: 15px;
+      border-radius: 4px;
+    }
+    
+    .inventory-list-page td {
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+      white-space: normal;
+      text-align:left;
+    }
+    
+    .inventory-list-page td:before {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align:left;
+      font-weight: bold;
+    }
+    
+    .inventory-list-page td:nth-of-type(1):before { content: "Código:"; }
+    .inventory-list-page td:nth-of-type(2):before { content: "Nombre:"; }
+    .inventory-list-page td:nth-of-type(3):before { content: "Categoría:"; }
+    .inventory-list-page td:nth-of-type(4):before { content: "Cantidad:"; }
+    .inventory-list-page td:nth-of-type(5):before { content: "Estado:"; }
+    .inventory-list-page td:nth-of-type(6):before { content: "Ubicación:"; }
+    .inventory-list-page td:nth-of-type(7):before { content: "Responsable:"; }
+    .inventory-list-page td:nth-of-type(8):before { content: "Acciones:"; }
+  }
